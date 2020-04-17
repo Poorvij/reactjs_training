@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 1</title>
+	<!-- Your external script -->
+	<script type="text/javascript" src="src/js/script.js"></script>
+
+	<style>
+		#projectTable {
+			font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+			border-collapse: collapse;
+			width: 50%;
+			background-color: #f2f2f2;
+		}
+
+		#projectTable td, #projectTable th {
+			border: 1px solid blue;
+			padding: 8px;
+		}
+	
+		#projectTable tr:hover {background-color: #ddd;}
+
+		#projectTable th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #4CAF50;
+			color: white;
+		}
+
+	</style>
+
+</head>
+<body>
+	<!-- Your html code -->
+
+	<h2>Project Data</h2>
+
+	<form>
+		<label for="pid">Project ID:</label>
+		<input type="text" id="pid" name="pid">
+		<label for="error" class="errorMsg" id="samePidLabel" style="display: none; color: red">Same Project Id cannot be added</label><br><br>
+		<label for="pname">Project Name:</label>
+		<input type="text" id="pname" name="pname"><br><br>
+		<label for="pname">Description:</label>
+		<input type="text" id="description" name="description"><br><br>
+		<label for="pstatus">Project Status:</label>
+		<select id="pstatus">
+			<option value="notStarted">Not Started</option>
+			<option value="inProgress">In progress</option>
+			<option value="completed">Completed</option>			
+		</select>
+
+		<input type="button" value="Add Project" onclick="addProject()">
+		<input type="button" value="View Project" onclick="viewProject()">
+		<input type="button" value="Check" onclick="check()"><br><br>
+
+		<label for="error" class="errorMsg" id="noProjectLabel" style="display: none; color: red">There is no project in the list</label><br>
+
+		<label for="notify" id="notify" style="display: none; color: blue"></label><br><br>
+
+		<div id="myDIV">
+			<table id='projectTable'>
+				
+			</table>
+		</div>
+
+
+	</form> 
+
+
+</body>
+</html>
